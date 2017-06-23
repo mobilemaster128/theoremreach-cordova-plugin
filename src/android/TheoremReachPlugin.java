@@ -14,7 +14,7 @@ import theoremreach.com.theoremreach.TheoremReachSurveyListener;
 /**
  * This class echoes a string called from JavaScript.
  */
-public class TheoremReach extends CordovaPlugin {
+public class TheoremReachPlugin extends CordovaPlugin {
     private static final String TAG = "TheoremReachPlugin";
 
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {

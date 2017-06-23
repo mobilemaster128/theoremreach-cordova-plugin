@@ -2,14 +2,14 @@
 
 #import <Cordova/CDV.h>
 
-@interface TheoremReach : CDVPlugin {
+@interface TheoremReachPlugin : CDVPlugin {
   // Member variables go here.
 }
 
 - (void)initWithApiKeyAndUserIdAndActivityContext:(CDVInvokedUrlCommand*)command;
 @end
 
-@implementation TheoremReach
+@implementation TheoremReachPlugin
 
 - (void)initWithApiKeyAndUserIdAndActivityContext:(CDVInvokedUrlCommand*)command
 {
