@@ -35,8 +35,7 @@ public class TheoremReachPlugin extends CordovaPlugin {
         if (action.equals("initWithApiKeyAndUserIdAndActivityContext")) {
             String apiKey = args.getString(0);
             String userId = args.getString(1);
-            TheoremReach.initWithApiKeyAndUserIdAndActivityContext(apiKey, userId, callbackContext);
-            //TheoremReach.initWithApiKeyAndUserIdAndActivityContext(apiKey, userId, this.cordova.getActivity());
+            TheoremReach.initWithApiKeyAndUserIdAndActivityContext(apiKey, userId, this.cordova.getActivity());
             return true;
         } else if (action.equals("isSurveyAvailable")) {
             return TheoremReach.getInstance().isSurveyAvailable();
