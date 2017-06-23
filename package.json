@@ -1,48 +1,49 @@
 {
-    "name": "theoremreach",
-    "version": "0.0.1",
-    "description": "Cordova plugin for TheoremReach",
-    "cordova": {
-        "id": "cordova-plugin-theoremreach",
-        "platforms": [
-            "android",
-            "ios"
-        ]
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/mobilemaster128/theoremreach-cordova-plugin.git"
-    },
-    "keywords": [
-        "ecosystem:cordova",
-        "cordova-android",
-        "cordova-ios"
-    ],
-    "author": "mobilemaster",
-    "license": "Apache 2.0",
-    "bugs": {
-        "url": "https://github.com/mobilemaster128/theoremreach-cordova-plugin/issues"
-    },
-    "homepage": "https://github.com/mobilemaster128/theoremreach-cordova-plugin#readme",
-    "engines": [{
-            "name": "cordova",
-            "version": ">=6.4.0"
-        },
-        {
-            "name": "cordova-ios",
-            "version": ">=4.3.0"
-        },
-        {
-            "name": "cordova-android",
-            "version": ">=5.0.0"
-        },
-        {
-            "name": "apple-xcode",
-            "version": ">=8.0.0"
-        },
-        {
-            "name": "apple-ios",
-            "version": ">=7.0.0"
-        }
+  "name": "theoremreach",
+  "version": "0.0.2",
+  "description": "Cordova plugin for TheoremReach",
+  "cordova": {
+    "id": "cordova-plugin-theoremreach",
+    "platforms": [
+      "android",
+      "ios"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mobilemaster128/theoremreach-cordova-plugin.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "mobilemaster",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/mobilemaster128/theoremreach-cordova-plugin/issues"
+  },
+  "homepage": "https://github.com/mobilemaster128/theoremreach-cordova-plugin#readme",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=6.4.0"
+    },
+    {
+      "name": "cordova-ios",
+      "version": ">=4.3.0"
+    },
+    {
+      "name": "cordova-android",
+      "version": ">=5.0.0"
+    },
+    {
+      "name": "apple-xcode",
+      "version": ">=8.0.0"
+    },
+    {
+      "name": "apple-ios",
+      "version": ">=7.0.0"
+    }
+  ]
 }
