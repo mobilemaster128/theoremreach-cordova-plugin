@@ -3,27 +3,40 @@
     xmlns="http://apache.org/cordova/ns/plugins/1.0" 
     xmlns:android="http://schemas.android.com/apk/res/android">
     <name>TheoremReach</name>
+    <description>Cordova plugin for TheoremReach</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,theoremreach</keywords>
     <js-module name="TheoremReach" src="www/TheoremReach.js">
         <clobbers target="cordova.plugins.TheoremReach" />
     </js-module>
+    <engines>
+        <engine name="cordova" version=">=6.4.0" />
+        <engine name="cordova-ios" version=">=4.3.0" />
+        <engine name="cordova-android" version=">=5.0.0" />
+        <engine name="apple-xcode" version=">=8.0.0" />
+        <engine name="apple-ios" version=">=7.0.0" />
+    </engines>
     <platform name="android">
+        <framework src="com.google.android.gms:play-services-ads:9.0.1" />
+        <framework src="com.theoremreach:theoremreach:3.0.0.7" />
+        <framework src="build-extras-theoremreach.gradle" custom="true" type="gradleReference" />
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="TheoremReach">
-                <param name="android-package" value="cordova-plugin-theoremreach.TheoremReach" />
-            </feature>
-        </config-file>
-        <config-file parent="/*" target="AndroidManifest.xml" />
-        <source-file src="src/android/TheoremReach.java" target-dir="src/cordova-plugin-theoremreach/TheoremReach" />
-    </platform>
-    <platform name="ios">
-        <config-file parent="/*" target="config.xml">
-            <feature name="TheoremReach">
-                <param name="ios-package" value="TheoremReach" />
+                <param name="android-package" value="com.plugin.theoremreach.TheoremReach" />
             </feature>
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml">
             <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
-        <source-file src="src/ios/TheoremReach.m" />
+        <config-file parent="/*" target="AndroidManifest.xml" />
+        <source-file src="src/android/TheoremReach.java" target-dir="src/com/plugin/theoremreach/" />
     </platform>
+    <!--platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="TheoremReach">
+                <param name="ios-package" value="TheoremReach" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/TheoremReach.m" />
+    </platform-->
 </plugin>

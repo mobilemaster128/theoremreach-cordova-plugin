@@ -1,0 +1,10 @@
+android.defaultConfig {
+   minSdkVersion 15
+}
+
+allprojects.repositories {
+    jcenter()
+    flatDir {
+        dirs 'libs'
+    }
+}

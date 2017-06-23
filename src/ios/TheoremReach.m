@@ -6,12 +6,12 @@
   // Member variables go here.
 }
 
-- (void)coolMethod:(CDVInvokedUrlCommand*)command;
+- (void)initWithApiKeyAndUserIdAndActivityContext:(CDVInvokedUrlCommand*)command;
 @end
 
 @implementation TheoremReach
 
-- (void)coolMethod:(CDVInvokedUrlCommand*)command
+- (void)initWithApiKeyAndUserIdAndActivityContext:(CDVInvokedUrlCommand*)command
 {
     CDVPluginResult* pluginResult = nil;
     NSString* echo = [command.arguments objectAtIndex:0];
