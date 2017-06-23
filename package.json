@@ -1,0 +1,27 @@
+{
+    "name": "theoremreach",
+    "version": "0.0.1",
+    "description": "Cordova plugin for TheoremReach",
+    "cordova": {
+        "id": "cordova-plugin-theoremreach",
+        "platforms": [
+            "android",
+            "ios"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mobilemaster128/theoremreach-cordova-plugin.git"
+    },
+    "keywords": [
+        "ecosystem:cordova",
+        "cordova-android",
+        "cordova-ios"
+    ],
+    "author": "mobilemaster",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/mobilemaster128/theoremreach-cordova-plugin/issues"
+    },
+    "homepage": "https://github.com/mobilemaster128/theoremreach-cordova-plugin#readme"
+}

@@ -21,6 +21,9 @@
                 <param name="ios-package" value="TheoremReach" />
             </feature>
         </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
         <source-file src="src/ios/TheoremReach.m" />
     </platform>
 </plugin>
