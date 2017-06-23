@@ -29,7 +29,7 @@
             <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml" />
-        <source-file src="src/android/TheoremReachPlugin.java" target-dir="src/com/plugin/theoremreachplugin/" />
+        <source-file src="src/android/TheoremReachPlugin.java" target-dir="src/com/plugin/theoremreach/" />
     </platform>
     <!--platform name="ios">
         <config-file parent="/*" target="config.xml">

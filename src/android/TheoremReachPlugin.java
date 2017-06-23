@@ -1,7 +1,13 @@
 package com.plugin.theoremreach;
 
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.util.Log;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaInterface;
+import org.apache.cordova.PluginResult;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -50,7 +56,7 @@ public class TheoremReachPlugin extends CordovaPlugin {
         } else if (action.equals("onRewardCenterClosed")) {
             return true;
         } else if (action.equals("hello")) {
-            int message = args.getInt(0);
+            int message = args.getString(0);
             this.hello(message, callbackContext);
             return true;
         }
