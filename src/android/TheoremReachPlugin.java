@@ -8,6 +8,8 @@ import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.PluginResult;
+import org.apache.cordova.CordovaWebView;
+import org.apache.cordova.PluginResult.Status;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,8 +33,8 @@ public class TheoremReachPlugin extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("initWithApiKeyAndUserIdAndActivityContext")) {
-            String apiKey = data.getString(0);
-            String userId = data.getString(1);
+            String apiKey = args.getString(0);
+            String userId = args.getString(1);
             TheoremReach.initWithApiKeyAndUserIdAndActivityContext(apiKey, userId, callbackContext);
             //TheoremReach.initWithApiKeyAndUserIdAndActivityContext(apiKey, userId, this.cordova.getActivity());
             return true;
@@ -56,7 +58,7 @@ public class TheoremReachPlugin extends CordovaPlugin {
         } else if (action.equals("onRewardCenterClosed")) {
             return true;
         } else if (action.equals("hello")) {
-            int message = args.getString(0);
+            String message = args.getString(0);
             this.hello(message, callbackContext);
             return true;
         }
