@@ -6,8 +6,9 @@
     <description>Cordova plugin for TheoremReach</description>
     <license>Apache 2.0</license>
     <keywords>cordova,theoremreach</keywords>
-    <js-module name="TheoremReachPlugin" src="www/TheoremReachPlugin.js">
-        <clobbers target="cordova.plugins.TheoremReachPlugin" />
+    <repo>https://github.com/mobilemaster128/theoremreach-cordova-plugin.git</repo>
+    <js-module name="TheoremReach" src="www/theoremreach.js">
+        <clobbers target="theoremreach" />
     </js-module>
     <engines>
         <engine name="cordova" version=">=6.4.0" />
@@ -31,12 +32,5 @@
         <config-file parent="/*" target="AndroidManifest.xml" />
         <source-file src="src/android/TheoremReachPlugin.java" target-dir="src/com/plugin/theoremreach/" />
     </platform>
-    <!--platform name="ios">
-        <config-file parent="/*" target="config.xml">
-            <feature name="TheoremReachPlugin">
-                <param name="ios-package" value="TheoremReachPlugin" />
-            </feature>
-        </config-file>
-        <source-file src="src/ios/TheoremReachPlugin.m" />
-    </platform-->
+    <!--platform name="ios"><config-file parent="/*" target="config.xml"><feature name="TheoremReachPlugin"><param name="ios-package" value="TheoremReachPlugin" /></feature></config-file><source-file src="src/ios/TheoremReachPlugin.m" /></platform-->
 </plugin>
