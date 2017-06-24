@@ -4,16 +4,16 @@ exports.hello = function(arg0, success, error) {
     exec(success, error, "TheoremReachPlugin", "hello", [arg0]);
 };
 
-exports.initWithApiKeyAndUserIdAndActivityContext = function(arg0, success, error) {
-    exec(success, error, "TheoremReachPlugin", "initWithApiKeyAndUserIdAndActivityContext", [arg0]);
+exports.initWithApiKeyAndUserIdAndActivityContext = function(arg0, arg1) {
+    exec(function() {}, function() {}, "TheoremReachPlugin", "initWithApiKeyAndUserIdAndActivityContext", [arg0, arg1]);
 };
 
-exports.isSurveyAvailable = function(arg0, success, error) {
-    exec(success, error, "TheoremReachPlugin", "isSurveyAvailable", [arg0]);
+exports.isSurveyAvailable = function() {
+    exec(function() {}, function() {}, "TheoremReachPlugin", "isSurveyAvailable", []);
 };
 
-exports.showRewardCenter = function(arg0, success, error) {
-    exec(success, error, "TheoremReachPlugin", "showRewardCenter", [arg0]);
+exports.showRewardCenter = function() {
+    exec(function() {}, function() {}, "TheoremReachPlugin", "showRewardCenter", []);
 };
 
 exports.onResume = function(arg0, success, error) {
