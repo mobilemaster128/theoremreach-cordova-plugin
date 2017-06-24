@@ -1,4 +1,4 @@
-package com.plugin.theoremreach;
+package cordova.plugin.theoremreach;
 
 import android.app.Activity;
 import android.content.Context;
