@@ -67,8 +67,9 @@ public class TheoremReachPlugin extends CordovaPlugin {
             String message = args.getString(0);
             this.hello(message, callbackContext);
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
     
     private void hello(String message, CallbackContext callbackContext) {
