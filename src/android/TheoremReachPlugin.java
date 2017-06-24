@@ -33,11 +33,17 @@ public class TheoremReachPlugin extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("initWithApiKeyAndUserId")) {
-            Log.d(TAG, args);
-            String apiKey = args.getString(0);
-            String userId = args.getString(1);
-            TheoremReach.initWithApiKeyAndUserIdAndActivityContext(apiKey, userId, this.cordova.getActivity());
-            return true;
+            Log.d(TAG, args.toString());
+            try {
+                String apiKey = args.getString(0);
+                String userId = args.getString(1);
+                TheoremReach.initWithApiKeyAndUserIdAndActivityContext(apiKey, userId, this.cordova.getActivity());
+                return true;
+            }
+            catch (JSONException e) {
+                Log.e(TAG, "execute: Got JSON Exception " + e.getMessage());
+                return false;
+            }
         } else if (action.equals("isSurveyAvailable")) {
             return TheoremReach.getInstance().isSurveyAvailable();
         } else if (action.equals("showRewardCenter")) {
