@@ -27,7 +27,7 @@
     "homepage": "https://github.com/mobilemaster128/theoremreach-cordova-plugin#readme",
     "engines": [{
             "name": "cordova",
-            "version": ">=6.4.0"
+            "version": ">=3.0.0"
         },
         {
             "name": "cordova-ios",
