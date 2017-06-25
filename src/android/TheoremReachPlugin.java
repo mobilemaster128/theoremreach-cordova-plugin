@@ -22,7 +22,7 @@ import theoremreach.com.theoremreach.TheoremReachSurveyListener;
 /**
  * This class echoes a string called from JavaScript.
  */
-public class TheoremReachPlugin extends CordovaPlugin {
+public class TheoremReachPlugin extends CordovaPlugin implements TheoremReachRewardListener, TheoremReachSurveyListener {
     private static final String TAG = "TheoremReachPlugin";
 
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
@@ -37,7 +37,13 @@ public class TheoremReachPlugin extends CordovaPlugin {
             try {
                 String apiKey = args.getString(0);
                 String userId = args.getString(1);
-                TheoremReach.initWithApiKeyAndUserIdAndActivityContext(apiKey, userId, this.cordova.getActivity());
+                // initialize TheoremReach
+                TheoremReach.initWithApiKeyAndUserIdAndActivityContext(apiKey, userId, cordova.getActivity());
+                TheoremReach.getInstance().onResume(cordova.getActivity());
+
+                //set reward and survey status listeners
+                TheoremReach.getInstance().setTheoremReachRewardListener(this);
+                TheoremReach.getInstance().setTheoremReachSurveyListener(this);
                 return true;
             }
             catch (JSONException e) {
@@ -48,6 +54,7 @@ public class TheoremReachPlugin extends CordovaPlugin {
             return TheoremReach.getInstance().isSurveyAvailable();
         } else if (action.equals("showRewardCenter")) {
             TheoremReach.getInstance().showRewardCenter();
+            TheoremReach.getInstance().onPause();
             return true;
         } else if (action.equals("onResume")) {
             return true;
@@ -78,6 +85,24 @@ public class TheoremReachPlugin extends CordovaPlugin {
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
+    }
+    
+    // implement callback for award notification
+    @Override
+    public void onReward(int quantity) {
+        Log.d(TAG, "onReward: " + quantity);
+    }
+    
+    // reward center opened. time to start earning content!
+    @Override
+    public void onRewardCenterOpened() {
+        Log.d(TAG, "onRewardCenterOpened");
+    }
+
+    // reward center closed. restart music/app.
+    @Override
+    public void onRewardCenterClosed() {
+        Log.d(TAG, "onRewardCenterClosed");
     }
 
 }

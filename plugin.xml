@@ -29,8 +29,16 @@
         <config-file parent="/*" target="AndroidManifest.xml">
             <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
-        <config-file parent="/*" target="AndroidManifest.xml" />
+		<!--config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<activity android:exported="true" android:name="cordova.plugin.theoremreach.TheoremReachPluginActivity" android:launchMode="singleTop">
+				<intent-filter>   
+					<action android:name="THEOREMREACH_PLUGIN_ACTIVITY" />  
+					<category android:name="android.intent.category.DEFAULT" />
+				</intent-filter>			
+			</activity>
+		</config-file-->
         <source-file src="src/android/TheoremReachPlugin.java" target-dir="src/cordova/plugin/theoremreach/" />
+        <!--source-file src="src/android/TheoremReachPluginActivity.java" target-dir="src/cordova/plugin/theoremreach/" /-->
         <info>Cordova Plugin for TheoremReach</info>
     </platform>
     <!--platform name="ios"><config-file parent="/*" target="config.xml"><feature name="TheoremReachPlugin"><param name="ios-package" value="TheoremReachPlugin" /></feature></config-file><source-file src="src/ios/TheoremReachPlugin.m" /></platform-->
