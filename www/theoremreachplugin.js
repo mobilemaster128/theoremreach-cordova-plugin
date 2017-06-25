@@ -1,9 +1,5 @@
 var exec = require('cordova/exec');
 
-exports.hello = function(arg0, success, error) {
-    exec(success, error, "TheoremReachPlugin", "hello", [arg0]);
-};
-
 exports.initWithApiKeyAndUserId = function(arg0, arg1) {
     exec(function() {}, function() {}, "TheoremReachPlugin", "initWithApiKeyAndUserId", [arg0, arg1]);
 };

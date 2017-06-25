@@ -53,8 +53,8 @@ public class TheoremReachPlugin extends CordovaPlugin implements TheoremReachRew
         } else if (action.equals("isSurveyAvailable")) {
             return TheoremReach.getInstance().isSurveyAvailable();
         } else if (action.equals("showRewardCenter")) {
-            TheoremReach.getInstance().showRewardCenter();
             TheoremReach.getInstance().onPause();
+            TheoremReach.getInstance().showRewardCenter();
             return true;
         } else if (action.equals("onResume")) {
             return true;
@@ -70,20 +70,8 @@ public class TheoremReachPlugin extends CordovaPlugin implements TheoremReachRew
             return true;
         } else if (action.equals("onRewardCenterClosed")) {
             return true;
-        } else if (action.equals("hello")) {
-            String message = args.getString(0);
-            this.hello(message, callbackContext);
-            return true;
         } else {
             return false;
-        }
-    }
-    
-    private void hello(String message, CallbackContext callbackContext) {
-        if (message != null && message.length() > 0) {
-            callbackContext.success(message);
-        } else {
-            callbackContext.error("Expected one non-empty string argument.");
         }
     }
     
