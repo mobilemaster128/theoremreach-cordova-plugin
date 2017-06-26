@@ -18,9 +18,11 @@
         <engine name="apple-ios" version=">=7.0.0" />
     </engines>
     <platform name="android">
+        <framework src="com.android.support:appcompat-v7:23.4.0" />
         <framework src="com.google.android.gms:play-services-ads:9.0.1" />
-        <framework src="com.theoremreach:theoremreach:3.0.0.7" />
+        <!--framework src="com.theoremreach:theoremreach:3.0.0.7" /-->
         <framework src="src/android/build-extras-theoremreach.gradle" custom="true" type="gradleReference" />
+        <resource-file src="src/android/theoremreach-3.0.0.7.aar" target="libs/theoremreach-3.0.0.7.aar" />
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="TheoremReachPlugin">
                 <param name="android-package" value="cordova.plugin.theoremreach.TheoremReachPlugin" />

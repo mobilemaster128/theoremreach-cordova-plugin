@@ -1,3 +1,17 @@
-android.defaultConfig {
-   minSdkVersion 15
+android {    
+    compileSdkVersion 23
+    defaultConfig {
+        minSdkVersion 15
+    }
+}
+
+repositories{    
+  jcenter()
+  flatDir {
+      dirs 'libs'
+   }
+}
+
+dependencies {
+   compile(name:'theoremreach-3.0.0.7', ext:'aar')
 }
