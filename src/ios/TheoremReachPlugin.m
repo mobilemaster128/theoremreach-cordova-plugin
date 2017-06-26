@@ -28,22 +28,25 @@ BOOL isCenterOpened = NO;
     NSString* apiKey = [command.arguments objectAtIndex:0];
     NSString* userId = [command.arguments objectAtIndex:1];
 
-    
-    [TheoremReach initWithApiKey:apiKey userId:userId];
-    
-    [[TheoremReach getInstance] setRewardListenerDelegate:self];
-    [[TheoremReach getInstance] setSurveyListenerDelegate:self];
+    [self.commandDelegate runInBackground:^{
+        [TheoremReach initWithApiKey:apiKey userId:userId];
+        
+        [[TheoremReach getInstance] setRewardListenerDelegate:self];
+        [[TheoremReach getInstance] setSurveyListenerDelegate:self];
+    }];
 }
 
 - (void)isSurveyAvailable:(CDVInvokedUrlCommand*)command
 {
-    CDVPluginResult* pluginResult = nil;
-    BOOL result = [TheoremReach getInstance].isSurveyAvailable;
-    if (isCenterOpened) {
-        result = NO;
-    }
-    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:result];
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    [self.commandDelegate runInBackground:^{
+        CDVPluginResult* pluginResult = nil;
+        BOOL result = [TheoremReach getInstance].isSurveyAvailable;
+        if (isCenterOpened) {
+            result = NO;
+        }
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:result];
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    }];
 }
 
 - (void)showRewardCenter:(CDVInvokedUrlCommand*)command
