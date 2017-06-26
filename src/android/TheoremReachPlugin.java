@@ -32,11 +32,12 @@ public class TheoremReachPlugin extends CordovaPlugin implements TheoremReachRew
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+
         if (action.equals("initWithApiKeyAndUserId")) {
-            Log.d(TAG, args.toString());
             try {
                 String apiKey = args.getString(0);
                 String userId = args.getString(1);
+
                 // initialize TheoremReach
                 TheoremReach.initWithApiKeyAndUserIdAndActivityContext(apiKey, userId, cordova.getActivity());
                 TheoremReach.getInstance().onResume(cordova.getActivity());
@@ -51,30 +52,54 @@ public class TheoremReachPlugin extends CordovaPlugin implements TheoremReachRew
                 return false;
             }
         } else if (action.equals("isSurveyAvailable")) {
-            return TheoremReach.getInstance().isSurveyAvailable();
+            return isSurveyAvailable(callbackContext);
         } else if (action.equals("showRewardCenter")) {
-            TheoremReach.getInstance().onPause();
-            TheoremReach.getInstance().showRewardCenter();
-            return true;
-        } else if (action.equals("onResume")) {
-            return true;
-        } else if (action.equals("onPause")) {
-            return true;
-        } else if (action.equals("setTheoremReachRewardListener")) {
-            return true;
+            return showRewardCenter();
         } else if (action.equals("onReward")) {
-            return true;
-        } else if (action.equals("TheoremReachSurveyListener")) {
-            return true;
+            return onReward(callbackContext);
         } else if (action.equals("onRewardCenterOpened")) {
-            return true;
+            return onRewardCenterOpened(callbackContext);
         } else if (action.equals("onRewardCenterClosed")) {
-            return true;
+            return onRewardCenterClosed(callbackContext);
         } else {
             return false;
         }
     }
-    
+
+    protected boolean isSurveyAvailable(CallbackContext callbackContext)
+	{
+        boolean result = TheoremReach.getInstance().isSurveyAvailable();
+		if (result) {
+            callbackContext.success("");
+        } else {
+            callbackContext.error("");
+        }
+        
+		return true;
+	}
+
+    protected boolean showRewardCenter()
+	{
+        TheoremReach.getInstance().showRewardCenter();
+
+		return true;
+	}
+
+    protected boolean onReward(CallbackContext callbackContext)
+	{
+		return true;
+	}
+
+    protected boolean onRewardCenterOpened(CallbackContext callbackContext)
+	{
+		return true;
+	}
+
+    protected boolean onRewardCenterClosed(CallbackContext callbackContext)
+	{
+		return true;
+	}
+
     // implement callback for award notification
     @Override
     public void onReward(int quantity) {
@@ -93,4 +118,31 @@ public class TheoremReachPlugin extends CordovaPlugin implements TheoremReachRew
         Log.d(TAG, "onRewardCenterClosed");
     }
 
+    @Override
+    public void onPause(boolean multitasking) {
+        super.onPause(multitasking);
+        Log.d(TAG, "onPause");
+        //TheoremReach.getInstance().onPause();
+    }
+
+    @Override
+    public void onResume(boolean multitasking) {
+        super.onResume(multitasking);
+        Log.d(TAG, "onResume");
+        //TheoremReach.getInstance().onResume(cordova.getActivity());
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart");
+        //TheoremReach.getInstance().onResume(cordova.getActivity());
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        Log.d(TAG, "onStop");
+        //TheoremReach.getInstance().onPause();
+    }
 }

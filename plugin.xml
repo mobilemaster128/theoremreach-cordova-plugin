@@ -7,7 +7,7 @@
     <license>Apache 2.0</license>
     <keywords>cordova,theoremreach</keywords>
     <repo>https://github.com/mobilemaster128/theoremreach-cordova-plugin.git</repo>
-    <js-module name="TheoremReachPlugin" src="www/theoremreachplugin.js">
+    <js-module name="TheoremReachPlugin" src="www/TheoremReachPlugin.js">
         <clobbers target="TheoremReachPlugin" />
     </js-module>
     <engines>
@@ -20,7 +20,7 @@
     <platform name="android">
         <framework src="com.google.android.gms:play-services-ads:9.0.1" />
         <framework src="com.theoremreach:theoremreach:3.0.0.7" />
-        <framework src="build-extras-theoremreach.gradle" custom="true" type="gradleReference" />
+        <framework src="src/android/build-extras-theoremreach.gradle" custom="true" type="gradleReference" />
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="TheoremReachPlugin">
                 <param name="android-package" value="cordova.plugin.theoremreach.TheoremReachPlugin" />
@@ -29,17 +29,41 @@
         <config-file parent="/*" target="AndroidManifest.xml">
             <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
-		<!--config-file target="AndroidManifest.xml" parent="/manifest/application">
-			<activity android:exported="true" android:name="cordova.plugin.theoremreach.TheoremReachPluginActivity" android:launchMode="singleTop">
-				<intent-filter>   
-					<action android:name="THEOREMREACH_PLUGIN_ACTIVITY" />  
-					<category android:name="android.intent.category.DEFAULT" />
-				</intent-filter>			
-			</activity>
-		</config-file-->
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:exported="true" android:name="cordova.plugin.theoremreach.TheoremReachPluginActivity" android:launchMode="singleTop">
+                <intent-filter>
+                    <action android:name="THEOREMREACH_PLUGIN_ACTIVITY" />
+                    <category android:name="android.intent.category.DEFAULT" />
+                </intent-filter>
+            </activity>
+        </config-file>
         <source-file src="src/android/TheoremReachPlugin.java" target-dir="src/cordova/plugin/theoremreach/" />
-        <!--source-file src="src/android/TheoremReachPluginActivity.java" target-dir="src/cordova/plugin/theoremreach/" /-->
+        <source-file src="src/android/TheoremReachPluginActivity.java" target-dir="src/cordova/plugin/theoremreach/" />
         <info>Cordova Plugin for TheoremReach</info>
     </platform>
-    <!--platform name="ios"><config-file parent="/*" target="config.xml"><feature name="TheoremReachPlugin"><param name="ios-package" value="TheoremReachPlugin" /></feature></config-file><source-file src="src/ios/TheoremReachPlugin.m" /></platform-->
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="TheoremReachPlugin">
+                <param name="ios-package" value="TheoremReachPlugin" />
+            </feature>
+        </config-file>
+        <config-file parent="NSAppTransportSecurity" target="*-Info.plist">
+            <array>
+                <dict>
+                    <key>NSAllowsArbitraryLoads</key>
+                    <Boolean>YES</Boolean>
+                </dict>
+            </array>
+        </config-file>
+        <framework src="WebKit.framework" />
+        <framework src="UIKit.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="Security.framework" />
+        <framework src="JavaScriptCore.framework" />
+        <framework src="Foundation.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="AdSupport.framework" />
+		<framework src="src/ios/TheoremReachSDK.framework" custom="true" />
+        <source-file src="src/ios/TheoremReachPlugin.m" />
+    </platform>
 </plugin>
