@@ -15,13 +15,13 @@ cordova plugin add TheoremReach
 ## Usage
 ### Initialize TheoremReach
 
-```Bash
+```javascript
 TheoremReachPlugin.initWithApiKeyAndUserId("YOUR_API_TOKEN", "YOUR_USER_ID");
 
 ```
 
 ### Reward Center
-```Bash
+```javascript
 TheoremReachPlugin.isSurveyAvailable(function (isAvailable) {
   if (isAvailable) {
     console.log("available");
@@ -35,14 +35,14 @@ TheoremReachPlugin.isSurveyAvailable(function (isAvailable) {
 
 ### Reward Callback
 #### Client Side Award Callback
-```Bash
+```javascript
 TheoremReachPlugin.onReward(function (quantity) {
   console.log('TheoremReach onReward:' + quantity);
 });
 
 ```
 #### Reward Center Events
-```Bash
+```javascript
 TheoremReachPlugin.onRewardCenterOpened(function () {
   console.log('TheoremReach onRewardCenterOpened in Cordova');
 });
@@ -54,7 +54,7 @@ TheoremReachPlugin.onRewardCenterClosed(function () {
 ```
 ## Declare Plugin Variable
 in declarations.d.ts file
-```Bash
+```javascript
 declare var TheoremReachPlugin: any;
 
 ```
