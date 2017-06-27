@@ -1,6 +1,6 @@
 {
     "name": "theoremreach",
-    "version": "0.0.6",
+    "version": "1.0.0",
     "description": "Cordova plugin for TheoremReach",
     "cordova": {
         "id": "cordova-plugin-theoremreach",
