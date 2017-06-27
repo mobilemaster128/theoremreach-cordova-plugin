@@ -9,7 +9,7 @@ Sign-up for a new developer account and create a new app here and copy your API 
 
 ## Install Plugin
 ```Bash
-cordova plugin add TheoremReach
+cordova plugin add theoremreach
 
 ```
 ## Usage
