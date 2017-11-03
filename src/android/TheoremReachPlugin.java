@@ -52,8 +52,15 @@ public class TheoremReachPlugin extends CordovaPlugin implements TheoremReachRew
                 return false;
             }
         } else if (action.equals("enableDebugMode")) {
-            enableDebugMode(callbackContext);
-            return true;
+            try {
+                final boolean mode = args.getString(0);
+                enableDebugMode(mode);
+                return true;
+            }
+            catch (JSONException e) {
+                Log.e(TAG, "execute: Got JSON Exception " + e.getMessage());
+                return false;
+            }
         } else if (action.equals("isSurveyAvailable")) {
             isSurveyAvailable(callbackContext);
             return true;
