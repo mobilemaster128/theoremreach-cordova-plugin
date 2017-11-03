@@ -53,7 +53,7 @@ public class TheoremReachPlugin extends CordovaPlugin implements TheoremReachRew
             }
         } else if (action.equals("enableDebugMode")) {
             try {
-                final boolean mode = args.getString(0);
+                final boolean mode = args.getBoolean(0);
                 enableDebugMode(mode);
                 return true;
             }
