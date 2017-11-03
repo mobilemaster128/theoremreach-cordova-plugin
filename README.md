@@ -1,6 +1,6 @@
 # theoremreach-cordova-plugin
 Cordova Plugin for TheoremReach
-#### Version 1.0.1 (06/27/2017)
+#### Version 3.1.5 (11/01/2017)
 - Tested on Android and iOS using Cordova cli 6.4.0, Cordova android 6.0.0 and Cordova ios 4.3.1
 - Available sdk functions: initWithApiKeyAndUserId, isSurveyAvailable, showRewardCenter, onReward, onRewardCenterOpened and onRewardCenterClosed
 
@@ -9,14 +9,17 @@ Sign-up for a new developer account and create a new app here and copy your API 
 
 ## Install Plugin
 ```Bash
-cordova plugin add theoremreach
+ionic cordova plugin add theoremreach
 
 ```
 ## Usage
 ### Initialize TheoremReach
-Initialize the TheoremReach SDK with the initWithApiKeyAndUserId call.
+Initialize the TheoremReach SDK with the initWithApiKeyAndUserId call in app.component.ts file.
 ```javascript
-TheoremReachPlugin.initWithApiKeyAndUserId("YOUR_API_TOKEN", "YOUR_USER_ID");
+platform.ready().then() => {
+  ...
+  TheoremReachPlugin.initWithApiKeyAndUserId("YOUR_API_TOKEN", "YOUR_USER_ID");
+}
 
 ```
 
@@ -58,9 +61,21 @@ TheoremReachPlugin.onRewardCenterClosed(function () {
  });
 
 ```
-## Declare Plugin Variable
-in declarations.d.ts file
+#### Survey Available Callback
+If you'd like to be notified when a survey is available you can add a listener:
 ```javascript
+TheoremReachPlugin.theoremreachSurveyAvailable(function (surveyAvailable) {
+  console.log('TheoremReach theoremreachSurveyAvailable in Cordova');
+});
+
+```
+## Declare Plugin Variable
+Please create declarations.d.ts file in src folder. 
+Add the following code in declarations.d.ts file
+```javascript
+declare module '*';
+// Use Cordova
+declare var cordova: any;
 declare var TheoremReachPlugin: any;
 
 ```

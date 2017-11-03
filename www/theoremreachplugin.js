@@ -4,6 +4,7 @@ var TheoremReachPlugin = function() {
     var onRewardCallback = function(quantity) {};
     var onRewardCenterOpenedCallback = function() {};
     var onRewardCenterClosedCallback = function() {};
+    var theoremreachSurveyAvailableCallback = function(surveyAvailable) {};
 }
 
 // INIT THEOREMREACH //
@@ -11,8 +12,14 @@ TheoremReachPlugin.prototype.initWithApiKeyAndUserId = function(key, user) {
     exec(TheoremReachPlugin.onRewardCallback, function() {}, "TheoremReachPlugin", 'setRewardCallback', []);
     exec(TheoremReachPlugin.onRewardCenterOpenedCallback, function() {}, "TheoremReachPlugin", 'setRewardCenterOpenedCallback', []);
     exec(TheoremReachPlugin.onRewardCenterClosedCallback, function() {}, "TheoremReachPlugin", 'setRewardCenterClosedCallback', []);
+    exec(TheoremReachPlugin.theoremreachSurveyAvailableCallback, function() {}, "TheoremReachPlugin", 'setRewardCenterClosedCallback', []);
 
     exec(function() {}, function() {}, "TheoremReachPlugin", 'initWithApiKeyAndUserId', [key, user]);
+}
+
+// SETTING THEOREMREACH DEBUG MODE //
+TheoremReachPlugin.prototype.enableDebugMode = function(mode) {
+    exec(function() {}, function() {}, "TheoremReachPlugin", 'enableDebugMode', [mode]);
 }
 
 // CHECK SURVEY AVAILABLE //
@@ -41,6 +48,12 @@ TheoremReachPlugin.prototype.onRewardCenterOpened = function(callback) {
 TheoremReachPlugin.prototype.onRewardCenterClosed = function(callback) {
     TheoremReachPlugin.onRewardCenterClosedCallback = callback;
     exec(TheoremReachPlugin.onRewardCenterClosedCallback, function() {}, "TheoremReachPlugin", 'setRewardCenterClosedCallback', []);
+}
+
+// THEOREMREACH AVAILABLE CALLBACK //
+TheoremReachPlugin.prototype.theoremreachSurveyAvailable = function(callback) {
+    TheoremReachPlugin.theoremreachSurveyAvailableCallback = callback;
+    exec(TheoremReachPlugin.theoremreachSurveyAvailableCallback, function() {}, "TheoremReachPlugin", 'setTheoremreachSurveyAvailableCallback', []);
 }
 
 var theoremReachPlugin = new TheoremReachPlugin();

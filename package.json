@@ -1,6 +1,6 @@
 {
     "name": "theoremreach",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "description": "Cordova plugin for TheoremReach",
     "cordova": {
         "id": "cordova-plugin-theoremreach",
@@ -19,12 +19,12 @@
         "cordova-android",
         "cordova-ios"
     ],
-    "author": "mobilemaster",
+    "author": "mobilemaster, hammondt",
     "license": "Apache 2.0",
     "bugs": {
-        "url": "https://github.com/mobilemaster128/theoremreach-cordova-plugin/issues"
+        "url": "https://github.com/theoremreach/IonicSDK/issues"
     },
-    "homepage": "https://github.com/mobilemaster128/theoremreach-cordova-plugin#readme",
+    "homepage": "https://github.com/theoremreach/IonicSDK#readme",
     "engines": [{
             "name": "cordova",
             "version": ">=3.0.0"

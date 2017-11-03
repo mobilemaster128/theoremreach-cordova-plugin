@@ -2,13 +2,12 @@
 //  TheoremReach.h
 //
 //  Created by TheoremReach on 11/22/15.
-//  Copyright (c) 2016 TheoremReach. All rights reserved.
+//  Copyright (c) 2017 TheoremReach. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "TRSurveyViewController.h"
 #import "TRUtils.h"
-#import "TRVSEventSourceDelegate.h"
 
 @class TheoremReach;
 
@@ -27,7 +26,14 @@
 
 @end
 
-@interface TheoremReach : NSObject <TRVSEventSourceDelegate>
+@protocol TheoremReachSurveyAvailableDelegate <NSObject>
+
+@required
+-(void)theoremreachSurveyAvailable: (BOOL) surveyAvailable;
+
+@end
+
+@interface TheoremReach : NSObject
 
 @property NSString *appuserId;
 @property NSString *idfa;
@@ -46,6 +52,7 @@
 
 @property (weak, nonatomic) id<TheoremReachRewardDelegate> rewardListenerDelegate;
 @property (weak, nonatomic) id<TheoremReachSurveyDelegate> surveyListenerDelegate;
+@property (weak, nonatomic) id<TheoremReachSurveyAvailableDelegate> surveyAvailableDelegate;
 
 // gets the only instance of TheoremReach
 + (TheoremReach*)getInstance;
@@ -69,10 +76,9 @@
 // returns true if a user hasn't completed their profile yet. When a user is profiled you can retrieve their demographic information via API. For details and access reach out to admin@theoremreach.com
 -(int) unityIsAppuserProfiled;
 
-// sets debug mode to true. Note surveys in debug mode may have unexpected behavior.
-
+- (void)enableDebugMode: (BOOL) debug;
 - (BOOL)isDebug;
-
+- (void)closeRewardCenter;
 
 
 

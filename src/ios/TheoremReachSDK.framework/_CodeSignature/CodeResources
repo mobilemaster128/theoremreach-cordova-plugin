@@ -6,39 +6,27 @@
 	<dict>
 		<key>Headers/TRSurveyView.h</key>
 		<data>
-		i5kqhZ7Inh6opRjF0OfEzSjvuZA=
+		GN8EdakAR5X662ndrH6L83+RluU=
 		</data>
 		<key>Headers/TRSurveyViewController.h</key>
 		<data>
-		bQGW6VMH9B6vJ0tmnnm/Xgufhh4=
+		YvGgNP/wup2LCfuX8CWZy2j1tFc=
 		</data>
 		<key>Headers/TRUtils.h</key>
 		<data>
-		7T99taoWQOHN9CBogdJmn8/OgzA=
-		</data>
-		<key>Headers/TRVSEventSource.h</key>
-		<data>
-		NsBwoC//Xejsffw3+NMJU/MipR8=
-		</data>
-		<key>Headers/TRVSEventSourceDelegate.h</key>
-		<data>
-		fCo0WA9LF1TVTfhC7OYZCg8TCSg=
-		</data>
-		<key>Headers/TRVSServerSentEvent.h</key>
-		<data>
-		ykLlN4LfP1Z3fOY9K4eiFSDXbvk=
+		K860eBEiG/vxyuxP7xWBlgDD1D4=
 		</data>
 		<key>Headers/TheoremReach.h</key>
 		<data>
-		8LTfphZqn8bDjKnGxop5BNGDAaY=
+		XM5DExEcVNOBlzR175TKW6j/WT0=
 		</data>
 		<key>Headers/TheoremReachSDK.h</key>
 		<data>
-		ukb8P3wM/o3zgOWo/C8f/9tVCag=
+		hw2sjHEiVrB/B38ZX1eGlXIwuJ4=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		iHnNMWVyu6j3jKzc18AKU6gj6Q4=
+		vJnvEL74B8ezq3LP5h+/VUrQL4k=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -51,88 +39,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			i5kqhZ7Inh6opRjF0OfEzSjvuZA=
+			GN8EdakAR5X662ndrH6L83+RluU=
 			</data>
 			<key>hash2</key>
 			<data>
-			oZDFvW/6Il5BZI0MVxqlh2zFKIuDJdPbJxUfMAO3tZE=
+			zRccjuLfxn5xz3B2QPKweTxQoYKELev98nWLtA3Tqp4=
 			</data>
 		</dict>
 		<key>Headers/TRSurveyViewController.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			bQGW6VMH9B6vJ0tmnnm/Xgufhh4=
+			YvGgNP/wup2LCfuX8CWZy2j1tFc=
 			</data>
 			<key>hash2</key>
 			<data>
-			FKv02c4ch14WfVGe3kEMK5MM7BTUXp+bwQfjBbwD9LA=
+			lTT2uiIYuBvb8he/kUKQ2SSXbfqsQ6gIPd1zrOHRyjI=
 			</data>
 		</dict>
 		<key>Headers/TRUtils.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7T99taoWQOHN9CBogdJmn8/OgzA=
+			K860eBEiG/vxyuxP7xWBlgDD1D4=
 			</data>
 			<key>hash2</key>
 			<data>
-			wX5Z3aflf3iLNa/GXrWnmzBLwf/+8p5FhAWMj/7bOL8=
-			</data>
-		</dict>
-		<key>Headers/TRVSEventSource.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			NsBwoC//Xejsffw3+NMJU/MipR8=
-			</data>
-			<key>hash2</key>
-			<data>
-			h8W3m81EqdFJylB8TiKov+7a69bwTRpOKTzAGp7+Fxk=
-			</data>
-		</dict>
-		<key>Headers/TRVSEventSourceDelegate.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			fCo0WA9LF1TVTfhC7OYZCg8TCSg=
-			</data>
-			<key>hash2</key>
-			<data>
-			17l/81O/WiKDjzP6RigbkaTBNODZQdbuzfljj8QeDEc=
-			</data>
-		</dict>
-		<key>Headers/TRVSServerSentEvent.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ykLlN4LfP1Z3fOY9K4eiFSDXbvk=
-			</data>
-			<key>hash2</key>
-			<data>
-			mQQBWLi/4Z4M5ASxvHFWDziS1sKHQ58LFIkljNMnSj4=
+			cQLRExWqBDes6+DHBsr6Ki614FHguld0wOH4z0ofZ2E=
 			</data>
 		</dict>
 		<key>Headers/TheoremReach.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8LTfphZqn8bDjKnGxop5BNGDAaY=
+			XM5DExEcVNOBlzR175TKW6j/WT0=
 			</data>
 			<key>hash2</key>
 			<data>
-			XMOWYu1v8S8o/t6JQKMAzFb9Hn8Mt9YYO4UA7CP57y0=
+			/Mdlcwdbr4UYRTszh0DKxNu4f1w/pFOXyS6fCp7BAqM=
 			</data>
 		</dict>
 		<key>Headers/TheoremReachSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ukb8P3wM/o3zgOWo/C8f/9tVCag=
+			hw2sjHEiVrB/B38ZX1eGlXIwuJ4=
 			</data>
 			<key>hash2</key>
 			<data>
-			P5CKlMI/npqeFin5cRj0du1QfeOm1Y0Z3WgSrB+6PQY=
+			LWeAP4y3ul5aX1vvF63Ls35dMuUUmnPFezaTBIAm0zc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

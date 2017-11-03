@@ -12,16 +12,18 @@ import org.json.JSONException;
 
 import theoremreach.com.theoremreach.TheoremReach;
 import theoremreach.com.theoremreach.TheoremReachRewardListener;
+import theoremreach.com.theoremreach.TheoremReachSurveyAvailableListener;
 import theoremreach.com.theoremreach.TheoremReachSurveyListener;
 
 /**
  * This class echoes a string called from JavaScript.
  */
-public class TheoremReachPlugin extends CordovaPlugin implements TheoremReachRewardListener, TheoremReachSurveyListener {
+public class TheoremReachPlugin extends CordovaPlugin implements TheoremReachRewardListener, TheoremReachSurveyListener, TheoremReachSurveyAvailableListener {
     private static final String TAG = "TheoremReachPlugin";
     private static CallbackContext onRewardCallback;
     private static CallbackContext onRewardCenterOpenedCallback;
     private static CallbackContext onRewardCenterClosedCallback;
+    private static CallbackContext theoremreachSurveyAvailableCallback;
 
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
@@ -49,6 +51,9 @@ public class TheoremReachPlugin extends CordovaPlugin implements TheoremReachRew
                 Log.e(TAG, "execute: Got JSON Exception " + e.getMessage());
                 return false;
             }
+        } else if (action.equals("enableDebugMode")) {
+            enableDebugMode(callbackContext);
+            return true;
         } else if (action.equals("isSurveyAvailable")) {
             isSurveyAvailable(callbackContext);
             return true;
@@ -64,6 +69,9 @@ public class TheoremReachPlugin extends CordovaPlugin implements TheoremReachRew
         } else if (action.equals("setRewardCenterClosedCallback")) {
             setRewardCenterClosedCallback(callbackContext);
             return true;
+        } else if (action.equals("setTheoremreachSurveyAvailableCallback")) {
+            setTheoremreachSurveyAvailableCallback(callbackContext);
+            return true;
         } else {
             return false;
         }
@@ -74,6 +82,11 @@ public class TheoremReachPlugin extends CordovaPlugin implements TheoremReachRew
         TheoremReach.initWithApiKeyAndUserIdAndActivityContext(apiKey, userId, cordova.getActivity());
         TheoremReach.getInstance().setTheoremReachRewardListener(this);
         TheoremReach.getInstance().setTheoremReachSurveyListener(this);
+    }
+
+    protected void enableDebugMode(boolean mode) {
+        //setting TheoremReach Debug Mode
+        TheoremReach.getInstance().enableDebugMode(mode);
     }
 
     protected void isSurveyAvailable(final CallbackContext callbackContext)
@@ -101,6 +114,11 @@ public class TheoremReachPlugin extends CordovaPlugin implements TheoremReachRew
     protected void setRewardCenterClosedCallback(CallbackContext callbackContext)
     {
         onRewardCenterClosedCallback = callbackContext;
+    }
+
+    protected void setTheoremreachSurveyAvailableCallback(CallbackContext callbackContext)
+    {
+        theoremreachSurveyAvailableCallback = callbackContext;
     }
 
     // implement callback for award notification
@@ -131,6 +149,16 @@ public class TheoremReachPlugin extends CordovaPlugin implements TheoremReachRew
         PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
         pluginResult.setKeepCallback(true);
         onRewardCenterClosedCallback.sendPluginResult(pluginResult);
+    }
+
+    // reward center closed. restart music/app.
+    @Override
+    public void theoremreachSurveyAvailable(boolean surveyAvailable) {
+        Log.d(TAG, "theoremreachSurveyAvailable: " + surveyAvailable);
+
+        PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, surveyAvailable);
+        pluginResult.setKeepCallback(true);
+        theoremreachSurveyAvailableCallback.sendPluginResult(pluginResult);
     }
 
     @Override

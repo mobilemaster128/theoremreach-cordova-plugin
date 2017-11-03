@@ -2,11 +2,11 @@
 //  TRUtils.h
 //
 //  Created by TheoremReach on 11/22/15.
-//  Copyright (c) 2016 TheoremReach. All rights reserved.
+//  Copyright (c) 2017 TheoremReach. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 
 #ifdef DEBUG
 
@@ -25,5 +25,5 @@
 #define IS_PHONE_DEVICE() UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone
 
 @interface TRUtils : NSObject
-
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 @end

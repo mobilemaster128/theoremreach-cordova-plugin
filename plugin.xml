@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-theoremreach" version="1.0.1" 
+<plugin id="cordova-plugin-theoremreach" version="1.1.0" 
     xmlns="http://apache.org/cordova/ns/plugins/1.0" 
     xmlns:android="http://schemas.android.com/apk/res/android">
     <name>TheoremReachPlugin</name>
     <description>Cordova plugin for TheoremReach</description>
     <license>Apache 2.0</license>
     <keywords>cordova,theoremreach</keywords>
-    <repo>https://github.com/mobilemaster128/theoremreach-cordova-plugin.git</repo>
+    <repo>https://github.com/theoremreach/IonicSDK.git</repo>
     <js-module name="TheoremReachPlugin" src="www/TheoremReachPlugin.js">
         <clobbers target="TheoremReachPlugin" />
     </js-module>
@@ -17,10 +17,10 @@
     </engines>
     <platform name="android">
         <framework src="com.android.support:appcompat-v7:23.4.0" />
-        <framework src="com.google.android.gms:play-services-ads:9.0.1" />
-        <!--framework src="com.theoremreach:theoremreach:3.0.0.7" /-->
+        <framework src="com.google.android.gms:play-services-ads:10.2.1" />
+        <!--framework src="com.theoremreach:theoremreach:3.1.5" /-->
         <framework src="src/android/build-extras-theoremreach.gradle" custom="true" type="gradleReference" />
-        <resource-file src="src/android/theoremreach-3.0.0.7.aar" target="libs/theoremreach-3.0.0.7.aar" />
+        <resource-file src="src/android/theoremreach-3.1.5.aar" target="libs/theoremreach-3.1.5.aar" />
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="TheoremReachPlugin">
                 <param name="android-package" value="cordova.plugin.theoremreach.TheoremReachPlugin" />
